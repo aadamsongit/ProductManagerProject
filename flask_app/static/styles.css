@@ -1,0 +1,129 @@
+body {
+  background-color: #6699ff !important ;
+  background-image: url("grocer.jpeg");
+  color: #80c0c0;
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #055099;
+  position: relative;
+  opacity: 100%;
+  height: 50px;
+  display: flex;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu
+.topnav a.icon {
+  background: #055099;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+} */
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #055099;
+  color: white;
+}
+
+/* Style the social media icons */
+.fa-facebook {
+  border: 2px solid white;
+  color: white;
+  border-radius: 50%;
+}
+
+.fa-twitter {
+  border: 1px solid white;
+  color: white;
+  border-radius: 50%;
+}
+
+.fa-instagram {
+  border: 1px solid white;
+  color: white;
+  border-radius: 50%;
+}
+
+/* Style the div container */
+div.container {
+  background-color: #cbcfde;
+  color: white;
+  border-radius: 95px;
+  padding-left: 160px;
+  height: 500px;
+  opacity: 93%;
+  padding-top: 25px;
+  border: 7px solid #055099;
+}
+
+/* Style the row */
+div.row {
+  margin-left: 20px;
+}
+
+/*Style the H1 */
+h1 {
+  color: silver;
+  font-family: georgia;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 30px;
+  background-color: #055099;
+  width: 380px;
+  height: 100px;
+  border: 2px solid silver;
+  padding: 20px;
+  text-align: center;
+  border-radius: 0.25em;
+}
+
+/*Style the H2 */
+h2 {
+  color: silver;
+  font-family: georgia;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: -3px;
+  background-color: #055099;
+  width: 380px;
+  height: 100px;
+  border: 2px solid silver;
+  padding: 30px;
+  text-align: center;
+  border-radius: 0.25em;
+}
+
+/*Style the buttons */
+.btn-secondary {
+  width: 380px;
+  background-color: #055099 !important;
+}

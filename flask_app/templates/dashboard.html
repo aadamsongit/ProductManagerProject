@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static' , filename='stylesdashboard.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+    <div class="topnav">
+      <p>Welcome to your personal database, <span class="text-warning">{{ user.first_name }}</span>. Your products are listed below. You may add a new product listing with the "Create" button.</p>
+    </div>
+
+
+      <center><h1>Product Inventory Table</h1></center>
+      <p>*Quantity reflects the number of each individual product, i.e. "20" for Lysol means "20 full spray bottles"</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Description</th>
+            <th scope="col">Customer/User Links</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+          <tr>
+            <td>{{product.product_name}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.description}}</td>
+            <td>
+            <a href="/product/{{ product.id }}">Display Product</a> | <a href="/edit/{{ product.id }}">Edit Product</a> |
+              <a href="/{{ product.id }}/delete">Delete Product</a></td>
+            </td>
+          </tr> 
+          {% endfor %}
+        </tbody>
+
+    <div class="navbar"> <a class="btn btn-info" href="/logout">Logout</a>
+      <a class="btn btn-info" href="/new">Create</a></div>
+
+    </div>
+  </body>
+</html>

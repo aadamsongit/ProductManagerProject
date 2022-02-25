@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+      <center><h1>Add a New Product</h1></center>
+      <div class="container">
+        <span class="text-info">
+            <center><a class="btn btn-danger m1-2 mt-3 float-end" href="/dashboard">Products</a>
+            <a class="btn btn-danger mt-3 float-end" href="/logout">Logout</a></center>
+            <br><br>
+      {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p class="text-danger">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+      <form action="/add_product" method="POST">
+        <input type="hidden" value = "{{ user.id }}" name="user_id">
+        <div class="form-group">
+        <label for="first">Product Name:</label>
+        <input type="text" class="form-control" name="product_name" />
+      </div>
+      <div class="form-group">
+        <label for="second">Quantity:</label>
+        <input type="number" class="form-control" name="quantity" />
+      </div>
+      <div class="form-group">
+        <label for="desc">Description:</label>
+        <input type="textarea" class="form-control" name="description" />
+      </div>
+      <button type="submit" class="btn btn-primary">Add Product Listing</button>
+    </div>
+    </form>
+  </body>
